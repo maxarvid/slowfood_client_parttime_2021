@@ -1,0 +1,20 @@
+{
+  "order": {
+    "id": 6,
+    "products": [
+      {
+        "id": 1,
+        "name": "Avo salad",
+        "price": "300kr",
+        "amount": 1
+      },
+      {
+        "id": 2,
+        "name": "Chicken wings",
+        "price": "100kr",
+        "amount": 2
+      }
+    ]
+  },
+  "message": "1 chicken wings was added to your order"
+}

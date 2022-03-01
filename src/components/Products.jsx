@@ -5,6 +5,8 @@ import { ToastContainer, toast } from "react-toastify";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
+  const [orderInProgress, setOrderInProgress] = useState(false)
+
 
   const fetchProducts = async () => {
     const response = await axios.get("https://reqres.in/api/products");
@@ -19,13 +21,27 @@ const Products = () => {
     a.category < b.category ? 1 : -1
   );
 
+
   const addToOrder = async (id) => {
-    const response = await axios.post("https://reqres.in/api/orders", {
-      params: { product_id: id },
-    });
-    toast(response.data.message, { toastId: "message-box" });
+    if(orderInProgress === false)
+    {
+      const response = await axios.post("https://reqres.in/api/orders", {
+        params: { product_id: id },
+      });
+      setOrderInProgress(true)
+      toast(response.data.message, { toastId: "message-box" });
+    } else 
+    {
+      const response = await axios.put("https://reqres.in/api/orders", {
+        params: { order_id: 1, product_id: id },
+      });
+      toast(response.data.message, { toastId: "message-box" });
+    }
+    
     // Need to save order ID here
   };
+
+  //if order(update) = put request, if not order(create) = post
 
   const productList = [];
   let prevCategory = "";
