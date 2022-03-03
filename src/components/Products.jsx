@@ -23,15 +23,13 @@ const Products = () => {
 
 
   const addToOrder = async (id) => {
-    if(orderInProgress === false)
-    {
+    if (orderInProgress === false) {
       const response = await axios.post("https://reqres.in/api/orders", {
         params: { product_id: id },
       });
       setOrderInProgress(true)
       toast(response.data.message, { toastId: "message-box" });
-    } else 
-    {
+    } else {
       const response = await axios.put("https://reqres.in/api/orders", {
         params: { order_id: 1, product_id: id },
       });
@@ -43,7 +41,7 @@ const Products = () => {
       
       setOrderSum(response.data.products)
 
-    })
+  });
     
 
   };
