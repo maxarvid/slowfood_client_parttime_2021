@@ -37,11 +37,16 @@ const Products = () => {
       });
       toast(response.data.message, { toastId: "message-box" });
     }
-    
-    // Need to save order ID here
-  };
 
-  //if order(update) = put request, if not order(create) = post
+    const response = await axios.get("https://reqres.in/api/orders", {
+      params: { order_id: 1, product_id: id, price: price },
+      
+      setOrderSum(response.data.products)
+
+    })
+    
+
+  };
 
   const productList = [];
   let prevCategory = "";

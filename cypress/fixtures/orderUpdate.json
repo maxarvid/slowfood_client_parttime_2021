@@ -5,14 +5,14 @@
       {
         "id": 1,
         "name": "Avo salad",
-        "price": "300kr",
+        "price": 300,
         "amount": 1
       },
       {
         "id": 2,
         "name": "Chicken wings",
-        "price": "100kr",
-        "amount": 2
+        "price": 100,
+        "amount": 1
       }
     ]
   },

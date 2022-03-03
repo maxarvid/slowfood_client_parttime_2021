@@ -24,8 +24,12 @@ describe("user can add more products to their order", () => {
     );
   });
 
-  it.only("is expected to make a PUT request", () => {
+  it("is expected to make a PUT request", () => {
     cy.wait("@OrderUpdate").its("request.method").should("eq", "PUT");
+  });
+
+  it("is expected that the total order amount of 400", () => {
+    cy.get("[data-cy=ordersum]".should("equal", 400));
   });
 
 });
