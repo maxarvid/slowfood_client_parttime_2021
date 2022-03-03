@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useDispatch } from "react-redux";
 import { Container, List } from "semantic-ui-react";
 import { ToastContainer, toast } from "react-toastify";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
+  const dispatch = useDispatch();
 
   const fetchProducts = async () => {
     const response = await axios.get("https://reqres.in/api/products");
@@ -24,6 +26,10 @@ const Products = () => {
       params: { product_id: id },
     });
     toast(response.data.message, { toastId: "message-box" });
+    dispatch({
+      type: "SET_ORDER_IN_PROGRESS",
+      payload: true
+    })
     // Need to save order ID here
   };
 

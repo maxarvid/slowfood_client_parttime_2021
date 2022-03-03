@@ -9,6 +9,7 @@ describe("Order a product", () => {
     cy.visit("/");
     cy.get("[data-cy=order-button]").last().click();
   });
+
   it("is expected to make a POST request", () => {
     cy.wait("@Orders.create").its("request.method").should("eq", "POST");
   });

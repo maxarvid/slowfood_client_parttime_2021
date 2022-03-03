@@ -11,6 +11,7 @@ describe("Display products in order", () => {
         fixture: "orderReview.json",
       }).as("getOrder");
       cy.visit("/");
+      cy.get("[data-cy=order-button]").last().click();
       cy.get("[data-cy=show-order]").click();
     });
 
@@ -32,20 +33,20 @@ describe("Display products in order", () => {
     });
   });
 
-  describe("unsuccessfully", () => {
-    beforeEach(() => {
-      cy.intercept("GET", "**/api/orders/**", {
-        fixture: "emptyOrder.json",
-      }).as("emptyOrder");
-      cy.visit("/");
-      cy.get("[data-cy=show-order]").click();
-    });
+  // describe("unsuccessfully", () => {
+  //   beforeEach(() => {
+  //     cy.intercept("GET", "**/api/orders/**", {
+  //       fixture: "emptyOrder.json",
+  //     }).as("emptyOrder");
+  //     cy.visit("/");
+  //     cy.get("[data-cy=show-order]").click();
+  //   });
 
-    it("is expected to warn the user that there are no products in order", () => {
-      cy.get("#message-box").should(
-        "contain.text",
-        "There are no items in your order"
-      );
-    });
-  });
+  //   it("is expected to warn the user that there are no products in order", () => {
+  //     cy.get("#message-box").should(
+  //       "contain.text",
+  //       "There are no items in your order"
+  //     );
+  //   });
+  // });
 });
