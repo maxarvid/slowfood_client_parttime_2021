@@ -4,7 +4,7 @@ describe("user can add more products to their order", () => {
       fixture: "products.json",
     }).as("getProducts");
     cy.visit("/");
-    
+
     cy.intercept("POST", "**/api/orders", {
       fixture: "order.json",
     }).as("Orders.create");
@@ -12,6 +12,7 @@ describe("user can add more products to their order", () => {
     cy.intercept("PUT", "**/api/orders", {
       fixture: "orderUpdate.json",
     }).as("OrderUpdate");
+  
 
     cy.get("[data-cy=order-button]").last().click();
     cy.get("[data-cy=order-button]").first().click();
@@ -28,9 +29,11 @@ describe("user can add more products to their order", () => {
     cy.wait("@OrderUpdate").its("request.method").should("eq", "PUT");
   });
 
-  it("is expected that the total order amount of 400", () => {
-    cy.get("[data-cy=ordersum]".should("equal", 400));
+  it("has a button", () => {
+    cy.get("[data-cy=total-cost]").should("not.exist");
   });
 
+  it("is expected that the total order amount of 400", () => {
+    cy.get("[data-cy=total-cost]").contains("400");
+  });
 });
-  
