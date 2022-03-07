@@ -8,14 +8,14 @@ import "./index.css";
 const App = () => {
   return (
     <>
-    <div data-cy="products-list" className="BackgroundImage" >
-       <Header />
-       <h2> Menu</h2>
-       <Products />
-       <ReviewOrder />
-       </div>
-       
-       <Footer />
+      <div data-cy="products-list" className="BackgroundImage">
+        <Header />
+        <h2> Menu</h2>
+        <Products />
+        <ReviewOrder />
+      </div>
+
+      <Footer />
     </>
   );
 };
