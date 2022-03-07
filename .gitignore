@@ -21,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Stops tracking of package.json to temporarily solve issue with react-script-start flag
+package.json
