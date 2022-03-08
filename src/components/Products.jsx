@@ -21,7 +21,7 @@ const Products = () => {
   );
 
   const addToOrder = async (id) => {
-    const toastSetting = { autoClose: 1000, toastid: "message-box" };
+    const toastSetting = { autoClose: 1500, toastId: "message-box" };
     if (orderInProgress === false) {
       const response = await axios.post("https://reqres.in/api/orders", {
         params: { product_id: id },
