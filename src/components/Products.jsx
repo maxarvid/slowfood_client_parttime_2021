@@ -5,8 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
-  const [orderInProgress, setOrderInProgress] = useState(false)
-
+  const [orderInProgress, setOrderInProgress] = useState(false);
 
   const fetchProducts = async () => {
     const response = await axios.get("https://reqres.in/api/products");
@@ -21,21 +20,20 @@ const Products = () => {
     a.category < b.category ? 1 : -1
   );
 
-
   const addToOrder = async (id) => {
+    const toastSetting = { autoClose: 1000, toastid: "message-box" };
     if (orderInProgress === false) {
       const response = await axios.post("https://reqres.in/api/orders", {
         params: { product_id: id },
       });
-      setOrderInProgress(true)
-      toast(response.data.message, { toastId: "message-box" });
+      setOrderInProgress(true);
+      toast(response.data.message, toastSetting);
     } else {
       const response = await axios.put("https://reqres.in/api/orders", {
         params: { order_id: 1, product_id: id },
       });
-      toast(response.data.message, { toastId: "message-box" });
+      toast(response.data.message, toastSetting);
     }
-  
   };
 
   const productList = [];
@@ -51,8 +49,12 @@ const Products = () => {
 
     productList.push(
       <List.Item key={product.id}>
-        <button data-cy="order-button" onClick={() => addToOrder(product.id)} className="ui button">
-        order +
+        <button
+          data-cy="order-button"
+          onClick={() => addToOrder(product.id)}
+          className="ui button"
+        >
+          order +
         </button>
         {`${product.name} ${product.price}      `}
       </List.Item>

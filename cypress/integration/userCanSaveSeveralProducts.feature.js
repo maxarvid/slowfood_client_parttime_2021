@@ -14,6 +14,7 @@ describe("user can add more products to their order", () => {
     }).as("updateOrder");
 
     cy.get("[data-cy=order-button]").last().click();
+    cy.wait(3000)
     cy.get("[data-cy=order-button]").first().click();
   });
 
