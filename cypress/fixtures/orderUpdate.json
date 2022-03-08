@@ -1,0 +1,21 @@
+{
+  "order": {
+    "id": 6,
+    "total": "400",
+    "products": [
+      {
+        "id": 6,
+        "name": "Avo salad",
+        "price": 300,
+        "amount": 1
+      },
+      {
+        "id": 1,
+        "name": "Chicken wings",
+        "price": 100,
+        "amount": 1
+      }
+    ]
+  },
+  "message": "chicken wings was added to your order"
+}

@@ -15,11 +15,11 @@
     "semantic-ui-react": "^2.1.1"
   },
   "scripts": {
-    "start": "PORT=3000 react-scripts start",
+    "start": "PORT=3000 react-scripts --openssl-legacy-provider start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start:silent": "PORT=3000 BROWSER=none react-scripts start",
+    "start:silent": "PORT=3000 BROWSER=none react-scripts --openssl-legacy-provider start",
     "cy:open": "cypress open",
     "cypress": "start-server-and-test start:silent http://localhost:3000/ cy:open"
   },

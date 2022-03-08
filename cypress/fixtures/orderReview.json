@@ -5,19 +5,19 @@
     "products": [{
         "id": 2,
         "name": "Halouli sticks",
-        "price": "200kr",
+        "price": 200,
         "category": "Side"
       },
       {
         "id": 3,
         "name": "Chicken wrap",
-        "price": "250kr",
+        "price": 250,
         "category": "Main"
       },
       {
         "id": 6,
         "name": "Avo salad",
-        "price": "300kr",
+        "price": 300,
         "category": "Starter"
       }
     ]

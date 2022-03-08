@@ -1,8 +1,8 @@
 import React from "react";
-import Header from "./component/Header";
-import Products from "./component/Products";
-import Footer from "./component/Footer";
-import ReviewOrder from "./component/ReviewOrder";
+import Header from "./components/Header";
+import Products from "./components/Products";
+import Footer from "./components/Footer";
+import ReviewOrder from "./components/ReviewOrder";
 import "./index.css";
 
 const App = () => {

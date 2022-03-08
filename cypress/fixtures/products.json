@@ -1,11 +1,11 @@
 
 {
   "products":[
-    {"id": 1, "name": "Chicken wings", "price": "100kr", "category": "Starter"},
-    {"id": 2, "name": "Halouli sticks", "price": "200kr","category": "Side"},
-    {"id": 3, "name": "Chicken wrap", "price": "250kr","category": "Main"},
-    {"id": 4, "name": "Olives", "price": "50kr", "category": "Starter"},
-    {"id": 5, "name": "Vegan wrap", "price": "500kr", "category": "Side"},
-    {"id": 6, "name": "Avo salad", "price": "300kr", "category": "Starter"}
+    {"id": 1, "name": "Chicken wings", "price": 100, "category": "Starter"},
+    {"id": 2, "name": "Halouli sticks", "price": 200,"category": "Side"},
+    {"id": 3, "name": "Chicken wrap", "price": 250,"category": "Main"},
+    {"id": 4, "name": "Olives", "price": 50, "category": "Starter"},
+    {"id": 5, "name": "Vegan wrap", "price": 500, "category": "Side"},
+    {"id": 6, "name": "Avo salad", "price": 300, "category": "Starter"}
   ]
 }
