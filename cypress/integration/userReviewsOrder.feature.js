@@ -12,6 +12,7 @@ describe("Display products in order", () => {
       }).as("getOrder");
       cy.visit("/");
       cy.get("[data-cy=show-order]").click();
+      debugger
     });
 
     it("is expected to show a list of products", () => {
